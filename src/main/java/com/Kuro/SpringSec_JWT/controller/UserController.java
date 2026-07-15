@@ -24,4 +24,9 @@ public class UserController {
     public String login(@RequestBody User user) {
         return userService.verify(user);
     }
+
+    @PostMapping("/username")
+    public User changeUsername(@RequestBody User user) {
+        return userService.changeUsername(user);
+    }
 }

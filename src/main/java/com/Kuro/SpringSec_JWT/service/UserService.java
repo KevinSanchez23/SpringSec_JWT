@@ -38,4 +38,10 @@ public class UserService {
         }
     }
 
+    public User changeUsername(User user){
+        User user1 = userRepository.findByUsername(user.getUsername());
+        user1.setUsername(user.getUsername());
+        return userRepository.save(user1);
+    }
+
 }
